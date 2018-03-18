@@ -16,15 +16,16 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author Julius
  */
 public class CSVHelper {
 
-    String pathString;
-    Path path;
-    String csvSplitBy;
+    private String pathString;
+    private Path path;
+    private String csvSplitBy;
 
     /**
      * Class constuctor.
@@ -144,7 +145,7 @@ public class CSVHelper {
         String[] values = null;
         try {
             if (getLinesValue() < line) {
-                //ERROR...
+                return values;
             }
             BufferedReader reader = Files.newBufferedReader(path);
             for (int i = 0; i < line; i++) {
